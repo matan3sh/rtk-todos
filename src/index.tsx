@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ApiProvider } from '@reduxjs/toolkit/query/react';
+import { todoApi } from './store';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApiProvider api={todoApi}>
+      <App />
+    </ApiProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
